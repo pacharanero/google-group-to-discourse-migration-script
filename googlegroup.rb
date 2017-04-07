@@ -20,7 +20,7 @@ require 'fileutils'
     # set environment variables for discourse mbox importer
     ENV['MBOX_SUBDIR'] = "mbox"                   # subdirectory with mbox files is 'mbox'
     ENV['LIST_NAME'] = ""                         # this will remove [google_group_name] text from the Subject of each post, if required
-    ENV['DATA_DIR'] = "./googlegroup-export/#{google_group_name}"   # subdirectory into which the mbox files have been saved
+    ENV['DATA_DIR'] = "#{File.dirname(__FILE__)}/googlegroup-export/#{google_group_name}"   # subdirectory into which the mbox files have been saved
     ENV['SPLIT_AT'] = "^From "                    # or "^From (.*)"
   end
 
