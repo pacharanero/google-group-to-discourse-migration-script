@@ -47,9 +47,8 @@ require 'fileutils'
   def import_to_discourse
     puts "\n\nStarting import of mbox messages into Discourse".red
     puts "This stage can take minutes to hours, depending on the size of your Google Group\n\n".blue
+    puts "...looking for mbox files at #{ENV['DATA_DIR']}/#{ENV['MBOX_SUBDIR']}".green
     require_relative 'mbox.rb'
-
-    puts "\n\nMigration from Google Groups to Discourse complete".magenta
   end
 
   # this monkey-patching of the String class is only in here to do pretty colours in the terminal
