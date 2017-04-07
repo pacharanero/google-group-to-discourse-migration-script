@@ -48,7 +48,7 @@ require 'fileutils'
     puts "\n\nStarting import of mbox messages into Discourse".red
     puts "This stage can take minutes to hours, depending on the size of your Google Group\n\n".blue
     puts "...looking for mbox files at #{ENV['DATA_DIR']}/#{ENV['MBOX_SUBDIR']}".green
-    require_relative 'mbox.rb'
+    load 'mbox.rb'
   end
 
   # this monkey-patching of the String class is only in here to do pretty colours in the terminal
@@ -61,7 +61,6 @@ require 'fileutils'
     def cyan;           "\e[36m#{self}\e[0m" end
     def gray;           "\e[37m#{self}\e[0m" end
   end
-
 
 setup
 scrape_google_group_to_mbox
